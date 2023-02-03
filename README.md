@@ -2,6 +2,13 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-typescript-helloworld)](https://api.reuse.software/info/github.com/SAP-samples/ui5-typescript-helloworld)
 
+
+
+**WORK IN PROGRESS FOR EXPLORING HOW TESTS WORK BEST WITH TYPESCRIPT**
+* [Unit tests (QUnit)](./src/test/unit/) look good: `npm start` and open http://localhost:8080/test/unit/unitTests.qunit.html 
+* OPA tests are broken and suffer from how badly OPA syntax fits to a typed language
+
+
 ## Description
 
 This app demonstrates a TypeScript setup for developing UI5 applications.

@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
-        "target": "es2015",
-        "module": "es2015",
         "moduleResolution": "node",
+        "target": "es2020",
+        "module": "es2020",
         "skipLibCheck": true,
         "preserveConstEnums": true,
         "inlineSourceMap": true,
@@ -16,10 +16,17 @@
         "paths": {
             "ui5/typescript/helloworld/*": [
                 "./src/*"
+            ],
+            "unit/*": [
+                "./src/test/unit/*"
+            ],
+            "integration/*": [
+                "./src/test/integration/*"
             ]
         }
     },
     "include": [
-        "./src/**/*"
+        "./src/**/*",
+        "./custom.d.ts"
     ]
 }
