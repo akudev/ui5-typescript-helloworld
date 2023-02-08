@@ -3,7 +3,7 @@ QUnit.config.autostart = false; // In ES modules, this would be executed AFTER t
 								// this is *before* the sap.ui.define() when transformed to UI5 syntax.
 // TODO: the above is valid once https://github.com/r-murphy/babel-plugin-transform-modules-ui5/issues/80 is fixed; otherwise an import which requires interop is needed below
 
-import "unit/integration/HelloJourney";
+import "integration/HelloJourney";
 
 QUnit.start();
 

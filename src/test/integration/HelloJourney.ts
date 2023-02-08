@@ -1,9 +1,11 @@
 import opaTest from "sap/ui/test/opaQunit";
 import Opa5 from "sap/ui/test/Opa5";
+import {When,Then} from "./pages/App";
+import "./pages/App";
 
 QUnit.module("Hello");
 
-opaTest("Should open the Hello dialog", 2, function (Given: Opa5, When: Opa5, Then: Opa5) {
+opaTest("Should open the Hello dialog", function (Given: Opa5, When: When, Then: Then) {
 
 	// Arrangements
 	Given.iStartMyUIComponent({
@@ -17,6 +19,32 @@ opaTest("Should open the Hello dialog", 2, function (Given: Opa5, When: Opa5, Th
 
 	// Assertions
 	Then.onTheAppPage.iShouldSeeTheHelloDialog();
+
+	//Actions
+	When.onTheAppPage.iPressTheOkButtonInTheDialog();
+
+	// Assertions
+	Then.onTheAppPage.iShouldNotSeeTheHelloDialog();
+
+	// Cleanup
+	Then.iTeardownMyApp();
+});
+
+opaTest("Should close the Hello dialog", function (Given: Opa5, When: When, Then: Then) {
+
+	// Arrangements
+	Given.iStartMyUIComponent({
+		componentConfig: {
+			name: "ui5.typescript.helloworld"
+		}
+	});
+
+	//Actions
+	When.onTheAppPage.iPressTheSayHelloWithDialogButton()
+		.and.iPressTheOkButtonInTheDialog();
+
+	// Assertions
+	Then.onTheAppPage.iShouldNotSeeTheHelloDialog();
 
 	// Cleanup
 	Then.iTeardownMyApp();
