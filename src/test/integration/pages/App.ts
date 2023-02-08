@@ -21,7 +21,6 @@ export class AppPageActions extends Opa5 {
 		return this.waitFor({
 			controlType: "sap.m.Button",
 			searchOpenDialogs: true,
-			matchers: [(x: any,y: any)=>{debugger;return true},()=>{}]
 			viewName,
 			actions: new Press(),
 			errorMessage: "Did not find the 'OK' button in the Dialog"
